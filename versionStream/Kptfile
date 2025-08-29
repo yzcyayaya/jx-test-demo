@@ -1,0 +1,18 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: versionStream
+upstream:
+  type: git
+  git:
+    repo: https://github.com/jenkins-x/jx3-versions
+    directory: /
+    ref: master
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/jenkins-x/jx3-versions
+    directory: /
+    ref: master
+    commit: 49a91762b7706271d632f6b05065d4a8f0cdd1fa
